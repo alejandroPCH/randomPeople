@@ -26,7 +26,7 @@
         
         // quiero que configures todo específicamente para el modo desarrollador, así tserá más rápido ver si hay errores
         mode: 'development',
-        watch:true,
+        // watch:true,
 
         plugins:[
 
@@ -157,6 +157,17 @@
 
         ]
     },
+
+
+    devServer:{
+
+        contentBase:path.join(__dirname,'dist'),
+        compress:true,
+        historyApiFallback:true,
+        port:3000,
+
+        open:true,
+    }
 
     
     }
