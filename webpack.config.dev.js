@@ -18,7 +18,7 @@
     const MiniCssExtractPlugin=require('mini-css-extract-plugin')
     const CopyPlugin=require('copy-webpack-plugin')
     const DotEnv= require('dotenv-webpack')
-
+    const BundleAnalyzerPlugin=require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
     module.exports={
         //entry= el punto de entrada
@@ -27,6 +27,10 @@
         // quiero que configures todo específicamente para el modo desarrollador, así tserá más rápido ver si hay errores
         mode: 'development',
         // watch:true,
+
+        //creará un archivo en json que te permitirá analizar cada parte de tu proyecto
+        devtool:'source-map',
+
 
         plugins:[
 
@@ -58,6 +62,8 @@
             }),
 
             new DotEnv(),
+
+            new BundleAnalyzerPlugin(),
         
         ],
 
